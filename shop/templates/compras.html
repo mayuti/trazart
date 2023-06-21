@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main/css/styles.css">
+    <title>Carrito de Compra</title>
+</head>
+<body>
+    {% extends 'nav.html' %}
+
+    {% block content %}
+    <h1>Carrito de Compra</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Detalle</th>
+                <th>Foto</th>
+                <th>Precio</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for producto in productos %}
+                <tr>
+                    <td>{{ producto.item }}</td>
+                    <td>{{ producto.detalle }}</td>
+                    <td><img src="{{ producto.foto.url }}" width="100" height="100" alt="{{ producto.item }}"></td>
+                    <td>{{ producto.precio }}</td>
+                    <td>
+                        <form action="{% url 'comprar_producto' producto.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Comprar</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
+</body>
+</html>

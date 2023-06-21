@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="main/css/styles.css">
+    <title>Contacto</title>
+</head>
+<body>
+    {% extends 'nav.html' %}
+
+    {% block content %}
+    <h1>Formulario de Contacto</h1>
+    <br>
+    <form method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <label for="id_first_name">Nombre:</label>
+        <input type="text" id="id_first_name" name="first_name" required><br><br>
+
+        <label for="id_last_name">Apellido:</label>
+        <input type="text" id="id_last_name" name="last_name" required><br><br>
+
+        <label for="id_email">Email:</label>
+        <input type="email" id="id_email" name="email" required><br><br>
+
+        <label for="id_phone">Teléfono:</label>
+        <input type="tel" id="id_phone" name="phone" required><br><br>
+
+        <label for="id_comments">Comentarios:</label>
+        <textarea id="id_comments" name="comments" required></textarea><br><br>
+
+        <input type="submit" value="Enviar">
+    
+    {% endblock %}
+    
+</body>
+</html>

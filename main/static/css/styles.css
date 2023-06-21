@@ -1,0 +1,23 @@
+/*Estilo para Logo de página index.html*/
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.logo {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+/*Fin de estilo index.html*/
