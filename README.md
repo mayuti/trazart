@@ -1,5 +1,5 @@
 # Trazart
 
-Trabajo para Final de Programación II
+Trabajo Final de Programación II
 
-Se debe tener instaladas las últimas versiones de Python, Django y Pillow.
+Se deben tener instaladas las últimas versiones de Python, Django y Pillow.
